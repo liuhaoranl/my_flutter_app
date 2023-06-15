@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'my_app',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: '计数器'),
     );
   }
 }
@@ -60,7 +60,6 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -95,12 +94,25 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
+            const Text('You have pushed the button this many times:'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
+            ),
+            const Text(
+              "这是一个计数器，以下是功能说明：", 
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              "点击按钮计数会加一。",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 15.0,
+                  height: 1.2,
+                  fontFamily: "Courier",
+                  background: Paint()..color = Colors.blue,
+                  decoration: TextDecoration.underline,
+                  decorationStyle: TextDecorationStyle.dashed),
             ),
           ],
         ),
@@ -108,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.thumb_up),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
